@@ -1,0 +1,14 @@
+---
+layout: page
+title: Projects
+permalink: /projects/
+---
+<ul class="project-list">
+  {% assign projects = site.projects | sort: "order" %}
+  {% for project in projects %}
+  <li>
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.summary }}</p>
+  </li>
+  {% endfor %}
+</ul>

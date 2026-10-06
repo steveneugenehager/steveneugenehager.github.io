@@ -1,0 +1,58 @@
+# Site settings — edit these first
+title: Steve's Data Engineering Learnings & Musings
+author: Steven Hager
+description: >-
+  One engineer's notes on data pipelines, distributed systems, and cloud
+  computing — learning in public.
+url: "https://steveneugenehager.github.io"
+baseurl: ""                               # "" for <user>.github.io repos; "/repo-name" for project sites
+
+# Social links (leave blank to hide)
+social:
+  github: steveneugenehager
+  linkedin: ""
+  twitter: ""
+  email: ""            # optional; it will be shown publicly
+
+# Navigation (order matters)
+nav:
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:title/
+timezone: America/Chicago
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: projects }
+    values: { layout: page }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .jekyll-cache
