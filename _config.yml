@@ -10,9 +10,9 @@ baseurl: ""                               # "" for <user>.github.io repos; "/rep
 # Social links (leave blank to hide)
 social:
   github: steveneugenehager
-  linkedin: ""
+  linkedin: "stevenehager"
   twitter: ""
-  email: ""            # optional; it will be shown publicly
+  email: "steven.eugene.hager@gmail.com"            # optional; it will be shown publicly
 
 # Navigation (order matters)
 nav:
@@ -22,6 +22,8 @@ nav:
     url: /projects/
   - title: Blog
     url: /blog/
+  - title: Reading
+    url: /reading/    # data lives in _data/reading.yml    
 
 # Build settings
 markdown: kramdown

@@ -1,0 +1,53 @@
+# Technical reading tracker
+# status: complete | planned | not-planned
+# Breadth-first: plan the early chapters, promote later ones only if the book earns a deeper read.
+
+- title: "Designing Data-Intensive Applications"
+  edition: "2nd ed."
+  author: "Martin Kleppmann, Chris Riccomini"
+  year: 2026
+  topic: distributed systems
+  url: "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/"
+  chapters:
+    - { num: 1,  name: "Trade-Offs in Data Systems Architecture", status: planned }
+    - { num: 2,  name: "Defining Nonfunctional Requirements", status: planned }
+    - { num: 3,  name: "Data Models and Query Languages", status: planned }
+    - { num: 4,  name: "Storage and Retrieval", status: not-planned }
+    - { num: 5,  name: "Encoding and Evolution", status: not-planned }
+    - { num: 6,  name: "Replication", status: not-planned }
+    - { num: 7,  name: "Sharding", status: not-planned }
+    - { num: 8,  name: "Transactions", status: not-planned }
+    - { num: 9,  name: "The Trouble with Distributed Systems", status: not-planned }
+    - { num: 10, name: "Consistency and Consensus", status: not-planned }
+    - { num: 11, name: "Batch Processing", status: not-planned }
+    - { num: 12, name: "Stream Processing", status: not-planned }
+    - { num: 13, name: "A Philosophy of Streaming Systems", status: not-planned }
+    - { num: 14, name: "Doing the Right Thing", status: not-planned }
+
+- title: "Deciphering Data Architectures"
+  edition: "1st ed."
+  author: "James Serra"
+  year: 2024
+  topic: data architecture
+  url: "https://www.oreilly.com/library/view/deciphering-data-architectures/9781098150754/"
+  chapters:
+    # Part I. Foundation
+    - { num: 1,  name: "Big Data", status: planned }
+    - { num: 2,  name: "Types of Data Architectures", status: planned }
+    - { num: 3,  name: "The Architecture Design Session", status: planned }
+    # Part II. Common Data Architecture Concepts
+    - { num: 4,  name: "The Relational Data Warehouse", status: not-planned }
+    - { num: 5,  name: "Data Lake", status: not-planned }
+    - { num: 6,  name: "Data Storage Solutions and Processes", status: not-planned }
+    - { num: 7,  name: "Approaches to Design", status: not-planned }
+    - { num: 8,  name: "Approaches to Data Modeling", status: not-planned }
+    - { num: 9,  name: "Approaches to Data Ingestion", status: not-planned }
+    # Part III. Data Architectures
+    - { num: 10, name: "The Modern Data Warehouse", status: not-planned }
+    - { num: 11, name: "Data Fabric", status: not-planned }
+    - { num: 12, name: "Data Lakehouse", status: not-planned }
+    - { num: 13, name: "Data Mesh Foundation", status: not-planned }
+    - { num: 14, name: "Should You Adopt Data Mesh? Myths, Concerns, and the Future", status: not-planned }
+    # Part IV. People, Processes, and Technology
+    - { num: 15, name: "People and Processes", status: not-planned }
+    - { num: 16, name: "Technologies", status: not-planned }
