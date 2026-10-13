@@ -5,7 +5,7 @@ permalink: /reading/
 ---
 
 Breadth-first: early chapters across many books, deeper reads only where they pay off.
-Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/steveneugenehager.github.io/blob/main/_data/reading.yml).
+Chapter notes: [all notes]({{ '/notes/' | relative_url }}). Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/steveneugenehager.github.io/blob/main/_data/reading.yml).
 
 <div class="reading-tracker" markdown="0">
 <div class="rt-filters">
@@ -28,7 +28,8 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 {%- assign total = book.chapters | size -%}
 {%- assign done = book.chapters | where: "status", "complete" | size -%}
 {%- assign active = book.chapters | where: "status", "active" | size -%}
-{%- assign planned = book.chapters | where: "status", "planned" | size %}
+{%- assign planned = book.chapters | where: "status", "planned" | size -%}
+{%- assign book_notes = site.notes | where: "book", book.id %}
 <section class="rt-book" data-topic="{{ book.topic | slugify }}">
 <h2><a href="{{ book.url }}">{{ book.title }}</a> <small>{{ book.edition }}</small></h2>
 <p class="rt-meta">{{ book.author }} &middot; {{ book.year }} &middot; {{ book.topic }} &middot; <strong>{{ done }} of {{ total }}</strong> complete, {{ active }} active, {{ planned }} planned</p>
@@ -37,7 +38,7 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 <thead><tr><th>#</th><th>Chapter</th><th>Status</th></tr></thead>
 <tbody>
 {%- for ch in book.chapters %}
-<tr data-status="{{ ch.status }}"><td>{{ ch.num }}</td><td>{{ ch.name }}</td><td><span class="rt-status rt-{{ ch.status }}">{{ ch.status | replace: "-", " " }}</span></td></tr>
+<tr data-status="{{ ch.status }}"><td>{{ ch.num }}</td><td>{%- assign note = book_notes | where: "chapter", ch.num | first -%}{% if note %}<a href="{{ note.url | relative_url }}">{{ ch.name }}</a> <span class="rt-note">notes</span>{% else %}{{ ch.name }}{% endif %}</td><td><span class="rt-status rt-{{ ch.status }}">{{ ch.status | replace: "-", " " }}</span></td></tr>
 {%- endfor %}
 </tbody>
 </table>
@@ -60,6 +61,7 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 .reading-tracker .rt-active { background: rgba(210,153,34,.3); }
 .reading-tracker .rt-planned { background: rgba(56,139,253,.25); }
 .reading-tracker .rt-not-planned { background: rgba(128,128,128,.2); }
+.reading-tracker .rt-note { font-size: .75em; opacity: .6; }
 .reading-tracker .rt-book.is-hidden, .reading-tracker tr.is-hidden { display: none; }
 </style>
 

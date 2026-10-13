@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- comment -%}
+Chapter note. Front matter: book (id from _data/reading.yml), chapter (number), title (used for the browser tab and SEO).
+Book title, author and chapter name come from the data file, so they're never retyped.
+{%- endcomment -%}
+{%- assign book = site.data.reading | where: "id", page.book | first -%}
+{%- assign ch = book.chapters | where: "num", page.chapter | first -%}
+{%- assign siblings = site.notes | where: "book", page.book | sort: "chapter" -%}
+<article class="post note">
+  <header>
+    <p class="meta"><a href="{{ '/notes/' | relative_url }}">Notes</a> &middot; {{ book.title }} {{ book.edition }} &middot; {{ book.author }}</p>
+    <h1>Ch. {{ page.chapter }}: {{ ch.name | default: page.title }}</h1>
+  </header>
+  {{ content }}
+  <nav class="back">
+    {%- for n in siblings -%}
+      {%- if n.url == page.url -%}
+        {%- assign prev_i = forloop.index0 | minus: 1 -%}
+        {%- unless forloop.first -%}{%- assign prev = siblings[prev_i] -%}<a href="{{ prev.url | relative_url }}">&larr; Ch. {{ prev.chapter }}</a> &middot; {% endunless -%}
+        <a href="{{ '/reading/' | relative_url }}">Reading list</a>
+        {%- unless forloop.last -%}{%- assign next = siblings[forloop.index] %} &middot; <a href="{{ next.url | relative_url }}">Ch. {{ next.chapter }} &rarr;</a>{%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </nav>
+</article>

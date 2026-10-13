@@ -1,0 +1,21 @@
+---
+layout: page
+title: Book Notes
+permalink: /notes/
+---
+<p>Chapter-by-chapter notes from my <a href="{{ '/reading/' | relative_url }}">technical reading list</a>.</p>
+{%- assign any = false -%}
+{%- for book in site.data.reading -%}
+{%- assign book_notes = site.notes | where: "book", book.id | sort: "chapter" -%}
+{%- if book_notes.size > 0 -%}
+{%- assign any = true %}
+<h2>{{ book.title }} <small>{{ book.edition }}</small></h2>
+<ul class="post-list">
+  {%- for n in book_notes -%}
+  {%- assign ch = book.chapters | where: "num", n.chapter | first %}
+  <li><a href="{{ n.url | relative_url }}">Ch. {{ n.chapter }}: {{ ch.name | default: n.title }}</a></li>
+  {%- endfor %}
+</ul>
+{%- endif -%}
+{%- endfor %}
+{% unless any %}<p>No notes yet.</p>{% endunless %}

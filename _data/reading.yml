@@ -1,8 +1,10 @@
 # Technical reading tracker
 # status: complete | active | planned | not-planned
+# id: short slug; chapter notes live in _notes/<id>/<NN>.md
 # Breadth-first: plan the early chapters, promote later ones only if the book earns a deeper read.
 
 - title: "Designing Data-Intensive Applications"
+  id: ddia
   edition: "2nd ed."
   author: "Martin Kleppmann, Chris Riccomini"
   year: 2026
@@ -25,6 +27,7 @@
     - { num: 14, name: "Doing the Right Thing", status: not-planned }
 
 - title: "Deciphering Data Architectures"
+  id: deciphering-data-architectures
   edition: "1st ed."
   author: "James Serra"
   year: 2024
@@ -53,6 +56,7 @@
     - { num: 16, name: "Technologies", status: not-planned }
 
 - title: "Terraform at Scale"
+  id: terraform-at-scale
   edition: "1st ed."
   author: "Robert Glenn"
   year: 2026

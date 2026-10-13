@@ -43,12 +43,17 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  notes:                       # chapter notes: _notes/<book id>/<NN>.md
+    output: true
+    permalink: /notes/:path/
 
 defaults:
   - scope: { path: "", type: posts }
     values: { layout: post }
   - scope: { path: "", type: projects }
     values: { layout: page }
+  - scope: { path: "", type: notes }
+    values: { layout: note }
   - scope: { path: "" }
     values: { layout: default }
 
