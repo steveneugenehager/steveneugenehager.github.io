@@ -1,5 +1,5 @@
 # Technical reading tracker
-# status: complete | planned | not-planned
+# status: complete | active | planned | not-planned
 # Breadth-first: plan the early chapters, promote later ones only if the book earns a deeper read.
 
 - title: "Designing Data-Intensive Applications"
@@ -51,3 +51,23 @@
     # Part IV. People, Processes, and Technology
     - { num: 15, name: "People and Processes", status: not-planned }
     - { num: 16, name: "Technologies", status: not-planned }
+
+- title: "Terraform at Scale"
+  edition: "1st ed."
+  author: "Robert Glenn"
+  year: 2026
+  topic: infrastructure as code
+  url: "https://www.oreilly.com/library/view/-/9798341649705/"
+  chapters:
+    - { num: 1,  name: "Bad 'Form!", status: active }
+    - { num: 2,  name: "Input Variables", status: planned }
+    - { num: 3,  name: "Effective Use of Logic", status: planned }
+    - { num: 4,  name: "Built-In Fields: Reference Attributes, Local Values, Meta-Arguments, and Outputs", status: not-planned }
+    - { num: 5,  name: "Developing Modules", status: not-planned }
+    - { num: 6,  name: "Optimizing State", status: not-planned }
+    - { num: 7,  name: "Automating at Enterprise Scale", status: not-planned }
+    - { num: 8,  name: "Evolving Projects Into Enterprise", status: not-planned }
+    - { num: 9,  name: "Organization Structures and Policy Constraints", status: not-planned }
+    - { num: 10, name: "Validating at Scale", status: not-planned }
+    - { num: 11, name: "Forever Forward", status: not-planned }
+    - { num: 12, name: "Last Thoughts", status: not-planned }

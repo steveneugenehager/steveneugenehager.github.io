@@ -12,6 +12,7 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 <span class="rt-label">Status</span>
 <button type="button" class="rt-btn is-active" data-filter="all">All</button>
 <button type="button" class="rt-btn" data-filter="complete">Complete</button>
+<button type="button" class="rt-btn" data-filter="active">Active</button>
 <button type="button" class="rt-btn" data-filter="planned">Planned</button>
 <button type="button" class="rt-btn" data-filter="not-planned">Not planned</button>
 <label class="rt-label" for="rt-topic">Topic</label>
@@ -26,10 +27,11 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 {%- for book in site.data.reading %}
 {%- assign total = book.chapters | size -%}
 {%- assign done = book.chapters | where: "status", "complete" | size -%}
+{%- assign active = book.chapters | where: "status", "active" | size -%}
 {%- assign planned = book.chapters | where: "status", "planned" | size %}
 <section class="rt-book" data-topic="{{ book.topic | slugify }}">
 <h2><a href="{{ book.url }}">{{ book.title }}</a> <small>{{ book.edition }}</small></h2>
-<p class="rt-meta">{{ book.author }} &middot; {{ book.year }} &middot; {{ book.topic }} &middot; <strong>{{ done }} of {{ total }}</strong> complete, {{ planned }} planned</p>
+<p class="rt-meta">{{ book.author }} &middot; {{ book.year }} &middot; {{ book.topic }} &middot; <strong>{{ done }} of {{ total }}</strong> complete, {{ active }} active, {{ planned }} planned</p>
 <progress max="{{ total }}" value="{{ done }}"></progress>
 <table class="rt-table">
 <thead><tr><th>#</th><th>Chapter</th><th>Status</th></tr></thead>
@@ -55,6 +57,7 @@ Source of truth: [`_data/reading.yml`](https://github.com/steveneugenehager/stev
 .reading-tracker .rt-table td:first-child { width: 3rem; opacity: .7; }
 .reading-tracker .rt-status { font-size: .8em; text-transform: uppercase; letter-spacing: .04em; padding: .1rem .45rem; border-radius: 3px; white-space: nowrap; }
 .reading-tracker .rt-complete { background: rgba(46,160,67,.25); }
+.reading-tracker .rt-active { background: rgba(210,153,34,.3); }
 .reading-tracker .rt-planned { background: rgba(56,139,253,.25); }
 .reading-tracker .rt-not-planned { background: rgba(128,128,128,.2); }
 .reading-tracker .rt-book.is-hidden, .reading-tracker tr.is-hidden { display: none; }
